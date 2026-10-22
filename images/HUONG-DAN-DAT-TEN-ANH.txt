@@ -1,0 +1,51 @@
+CÁCH THÊM ẢNH VÀO WEBSITE
+==========================
+1. Chọn ảnh đẹp nhất trong Drive, tải về máy.
+2. Đổi tên ảnh ĐÚNG như tên bên dưới (chữ thường, không dấu, không khoảng trắng).
+   Đuôi .jpg, .png hoặc .webp đều được.
+3. Thả ảnh vào thư mục "images" này rồi tải lên GitHub.
+4. Ô nào chưa có ảnh sẽ tự hiện khung nét đứt. Có ảnh thì khung tự biến mất.
+5. Mỗi ảnh nên dưới 500KB (nén miễn phí tại squoosh.app hoặc tinypng.com).
+
+ẢNH LỚN ĐẦU TRANG (rất nên có, đây là điểm nhấn của website)
+  chan-dung.jpg         Ảnh chân dung DỌC, rõ mặt, nền đơn giản
+  muc-luc.jpg           Ảnh ngang bạn đang làm việc (sự kiện, hậu trường) cho phần Contents
+
+CASE 1 – UP LAUNCH (Drive: 01_UP LAUNCH 2026)
+  up-1-kv.jpg           Key visual sự kiện (ảnh lớn, nên là ảnh dọc hoặc vuông)
+  up-2-su-kien.jpg      Toàn cảnh sự kiện
+  up-3-bao-chi.jpg      Ảnh ghép các bài báo
+
+CASE 2 – NẾU CÓ MỘT ĐIỀU ƯỚC (Drive: 03_NEU CO MOT DIEU UOC 2024)
+  wish-1-kv.jpg         Key visual chiến dịch
+  wish-2-su-kien.jpg    Sự kiện 20/01/2024
+  wish-3-gian-hang.jpg  Gian hàng gây quỹ
+
+CASE 3 – GÂY QUỸ MOMO (Drive: 02_GAY QUY MOMO)
+  momo-1-chien-dich.jpg Screenshot trang chiến dịch có số tiền
+  momo-2-dai-su-nuoc.jpg  -> dùng file "Dai su nuoc 2023 - Tram tu van Mega Market.jpg"
+  momo-3-ket-qua.jpg    Công trình nước / bữa ăn
+
+CASE 4 – CSR (Drive: 04_CSR PARTNERSHIP & MOU)
+  csr-1-menu.jpg        1 trang CSR Partnership Menu (đã che giá)
+  csr-2-ky-mou.jpg      Lễ ký MOU
+  csr-3-hoat-dong.jpg   Hoạt động sau ký kết
+
+CASE 5 – BRANDING ASIF (Drive: 05_BRANDING ASIF)
+  brand-1-guideline.jpg Trang brand guideline tiêu biểu
+  brand-2-insight.jpg   ĐÃ CÓ SẴN (lấy từ file DATA)
+  brand-3-website.jpg   Screenshot website asif.foundation
+
+PHẦN MORE WORK
+  g-bao-cao.jpg         Bìa 2 báo cáo thường niên
+  g-profile-brochure.jpg Bìa profile + donor brochure
+  g-websites.jpg        Screenshot 2 website
+  g-logos.jpg           Logo VietNEST + UP
+  g-social.jpg          Ghép 6–9 bài social đẹp nhất thành 1 ảnh (Canva)
+  g-video.jpg           Ảnh bìa video
+  g-tap-huan.jpg        Buổi tập huấn
+  g-khoi-cong.jpg       Lễ khởi công nhà vệ sinh
+  g-su-kien-2023.jpg    Tọa đàm Goods for Good / trạm Đại sứ nước
+
+LƯU Ý: Ảnh có trẻ em, hãy hỏi tổ chức trước khi đăng công khai.
+Không tải lên file nội bộ (thư mục 99_NOI BO trên Drive).

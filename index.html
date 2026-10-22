@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ha Nhu Huong – Portfolio</title>
+<meta name="description" content="Portfolio of Ha Nhu Huong, Communications, Brand & Partnerships Lead in Ho Chi Minh City.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F0F0EB; --card:#F8F8F4; --salmon:#EFB9A4; --salmon-soft:#F8DED3;
+  --sage:#A7C0BB; --sage-soft:#D5E2DF; --green:#53735E; --green-deep:#3C5847;
+  --ink:#2C3B32; --muted:#5E6F64; --line:rgba(83,115,94,.35); --on-green:#F0F0EB;
+  --fill-ink:#7A3B22;
+  color-scheme:light; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1C2621; --card:#24312A; --salmon:#E4A991; --salmon-soft:#4A3229;
+    --sage:#7E9C96; --sage-soft:#2C3D38; --green:#A7C0BB; --green-deep:#2F4A3B;
+    --ink:#E9EBE4; --muted:#AFBDB4; --line:rgba(167,192,187,.3); --on-green:#F0F0EB;
+    --fill-ink:#F6C9B6; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1C2621; --card:#24312A; --salmon:#E4A991; --salmon-soft:#4A3229;
+  --sage:#7E9C96; --sage-soft:#2C3D38; --green:#A7C0BB; --green-deep:#2F4A3B;
+  --ink:#E9EBE4; --muted:#AFBDB4; --line:rgba(167,192,187,.3); --on-green:#F0F0EB;
+  --fill-ink:#F6C9B6; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 56px);scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:17px;line-height:1.65}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--salmon);outline-offset:3px;border-radius:3px}
+.display{font-family:Anton,"Bebas Neue","Arial Narrow",Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:.92;letter-spacing:.005em;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+
+.draft{background:var(--salmon-soft);color:var(--fill-ink);font-size:14px;padding:9px 32px;text-align:center}
+.draft p{margin:0}
+
+/* top bar like the reference */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar ul{list-style:none;margin:0 auto;max-width:1180px;padding:0 32px;display:grid;grid-template-columns:repeat(4,1fr);height:52px;align-items:center;font-size:14px}
+.bar li:nth-child(2){text-align:center}.bar li:nth-child(3){text-align:center}.bar li:last-child{text-align:right}
+.bar a{text-decoration:none;color:var(--green)}
+.bar a:hover{color:var(--ink)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:56% 44%;min-height:calc(100vh - 100px);min-height:calc(100svh - 100px);position:relative;overflow:hidden}
+.hero-block{background:var(--green);color:var(--on-green);position:relative;padding:48px 40px 40px 72px;display:flex;flex-direction:column;justify-content:space-between}
+.hero-block::before{content:"";position:absolute;left:40px;top:0;bottom:0;width:1px;background:rgba(240,240,235,.35)}
+.hero-kicker{font-size:15px;max-width:34ch;opacity:.92;margin:0}
+.hero h1{position:relative;z-index:2}
+.hero h1 .small{display:block;font-size:clamp(44px,7vw,96px);color:var(--salmon)}
+.hero h1 .big{display:block;font-size:clamp(76px,14.5vw,210px);white-space:nowrap;margin-right:-40%}
+.hero-photo{position:relative;background:var(--sage)}
+.hero-photo figure.ph{position:absolute;inset:0;border:0;border-radius:0;background:var(--sage-soft)}
+.hero-photo figure.ph.has-img img{border-radius:0}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hero h1 span{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero h1 .big{animation-delay:.12s}
+
+.intro{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;padding:56px 0;border-bottom:1px solid var(--line)}
+.intro .tag{font-size:clamp(22px,2.6vw,30px);line-height:1.3;margin:0 0 20px;color:var(--green);font-weight:500;max-width:28ch}
+.who{margin:0 0 24px;color:var(--muted)}
+.who b{color:var(--ink);font-weight:600}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none}
+.btn-main{background:var(--green);color:var(--on-green)}
+.btn-line{border:1.5px solid var(--green);color:var(--green)}
+.facts{margin:0;font-size:15px}
+.facts div{padding:12px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:90px 1fr;gap:12px}
+.facts div:first-child{padding-top:0}
+.facts dt{color:var(--salmon);font-weight:600;filter:saturate(1.3) brightness(.85)}
+.facts dd{margin:0;color:var(--muted)}
+
+section{padding:96px 0 0}
+.sec-title{font-size:clamp(64px,11vw,150px);color:var(--green);margin-bottom:40px}
+
+/* contents */
+.contents{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.contents figure.ph{min-height:300px;margin-left:12%}
+.toc{list-style:none;margin:56px 0 0;padding:0}
+.toc a{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--salmon);text-decoration:none;color:var(--green);font-size:19px;font-weight:500}
+.toc a:hover .t{color:var(--ink)}
+.toc .n{color:var(--salmon);filter:saturate(1.3) brightness(.85);font-size:16px}
+.toc .t{text-transform:uppercase;letter-spacing:.04em}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:end}
+.about p{font-size:19px;margin:0 0 16px;max-width:60ch}
+
+/* numbers band */
+.band{background:var(--sage);margin-top:96px;padding:56px 0}
+.band ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:0}
+.band li{padding:0 20px;border-left:1px solid rgba(44,59,50,.25)}
+.band li:first-child{border-left:0;padding-left:0}
+.band b{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(34px,4.2vw,54px);line-height:1;color:#2C3B32;margin-bottom:10px}
+.band span{display:block;font-size:14px;line-height:1.45;color:#2C3B32}
+.band .fill{color:var(--fill-ink)}
+
+/* experience timeline */
+.exp{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:start}
+.exp .sec-title{position:sticky;top:90px}
+.tl{list-style:none;margin:8px 0 0;padding:0}
+.tl li{position:relative;padding:0 0 32px 32px}
+.tl li::before{content:"";position:absolute;left:5px;top:12px;bottom:-4px;width:2px;background:var(--salmon)}
+.tl li:last-child::before{display:none}
+.tl li::after{content:"";position:absolute;left:0;top:6px;width:12px;height:12px;border-radius:50%;background:var(--green)}
+.tl h3{margin:0;font-size:17px;text-transform:uppercase;letter-spacing:.03em;color:var(--green);font-weight:600;line-height:1.35}
+.tl .org{margin:2px 0 0;font-weight:500}
+.tl .d{margin:0;color:var(--muted);font-size:14px}
+
+/* cases */
+.case{border-top:1px solid var(--line);padding:56px 0 24px}
+.case-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+.case .num{color:var(--salmon);filter:saturate(1.3) brightness(.85);font-weight:600;font-size:15px;margin:0 0 8px}
+.case h3.display{font-size:clamp(52px,8vw,112px);color:var(--green)}
+.case .sub{margin:12px 0 0;font-size:19px;font-weight:500;max-width:46ch}
+.case .meta{margin:4px 0 0;color:var(--muted);font-size:15px}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0;list-style:none}
+.tags li{font-size:13px;font-weight:500;padding:5px 14px;border-radius:999px;background:var(--sage-soft);color:var(--ink)}
+.media{display:grid;grid-template-columns:1.7fr 1fr;grid-template-rows:1fr 1fr;gap:14px;margin:0 0 40px;height:clamp(320px,42vw,520px)}
+.media figure.ph:first-child{grid-row:span 2}
+.case-body{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.case h4{margin:0 0 6px;font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--green);font-weight:600}
+.case p,.case ul{margin:0 0 22px}
+.case ul{padding-left:20px}
+.case li{margin-bottom:6px}
+.results{background:var(--salmon-soft);border-radius:24px;padding:28px 30px}
+.results h4{color:var(--fill-ink)}
+.results ul{margin:0}
+
+/* placeholders and image slots */
+.ph{border:1.5px dashed var(--line);border-radius:18px;min-height:150px;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;color:var(--muted);font-size:13px;background:var(--card);margin:0;position:relative;overflow:hidden}
+.ph code{font-size:12px;opacity:.8}
+figure.ph img{display:none}
+figure.ph.has-img{border:0;padding:0;background:none}
+figure.ph.has-img .ph-label{display:none}
+figure.ph.has-img img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:18px;cursor:zoom-in}
+figure.ph.has-img img.contain{object-fit:contain;background:var(--card)}
+.fill{background:var(--salmon-soft);color:var(--fill-ink);border-bottom:1.5px dashed var(--salmon);padding:0 4px;border-radius:3px;font-size:.92em}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.tile{grid-column:span 2}
+.tile.wide{grid-column:span 3}
+.tile figure.ph{height:220px;margin-bottom:14px}
+.tile.wide figure.ph{height:280px}
+.tile h3{font-size:17px;margin:0 0 4px;color:var(--green)}
+.tile p{margin:0;font-size:15px;color:var(--muted)}
+
+/* closing */
+.closing{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start}
+.closing p{font-size:18px;max-width:58ch}
+.contact{background:var(--green);color:var(--on-green);border-radius:28px;padding:40px;margin-top:96px}
+.contact .display{font-size:clamp(64px,10vw,140px);color:var(--salmon);margin-bottom:28px}
+.contact dl{margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.contact dt{font-size:13px;opacity:.75}
+.contact dd{margin:4px 0 0;font-weight:500;word-break:break-word}
+.contact a{color:var(--on-green)}
+.contact .fill{color:var(--fill-ink)}
+footer{padding:40px 0 56px;color:var(--muted);font-size:14px}
+
+@media (max-width:900px){
+  .wrap{padding:0 20px}
+  .bar ul{padding:0 20px;font-size:13px}
+  .hero{grid-template-columns:1fr;min-height:0}
+  .hero-block{padding:36px 20px 28px 44px;min-height:62vh}
+  .hero-block::before{left:24px}
+  .hero h1 .big{margin-right:0;font-size:clamp(64px,19vw,140px)}
+  .hero-photo{height:70vw}
+  .intro,.contents,.about,.exp,.case-body,.closing{grid-template-columns:1fr;gap:32px}
+  .exp .sec-title{position:static}
+  .contents figure.ph{margin-left:0;min-height:220px}
+  .toc{margin-top:0}
+  .band ul{grid-template-columns:1fr 1fr;gap:28px 0}
+  .band li{border-left:0;padding:0 12px 0 0}
+  .media{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;height:auto}
+  .media figure.ph:first-child{grid-column:span 2;grid-row:auto;height:62vw}
+  .media figure.ph{height:34vw;min-height:120px}
+  .gallery{grid-template-columns:1fr 1fr}
+  .tile,.tile.wide{grid-column:span 1}
+  .contact{padding:28px}
+  .contact dl{grid-template-columns:1fr 1fr}
+  section{padding-top:72px}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .gallery{grid-template-columns:1fr}
+  .contact dl{grid-template-columns:1fr}
+  .bar li:nth-child(3){display:none}
+  .bar ul{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+
+<div class="draft"><p>Bản nháp. Các ô màu hồng và khung ảnh nét đứt là chỗ cần điền trước khi gửi cho nhà tuyển dụng.</p></div>
+
+<nav class="bar" aria-label="Main">
+  <ul>
+    <li><a href="#top">2026</a></li>
+    <li><a href="#work">work</a></li>
+    <li><a href="#gallery">more work</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
+
+<main id="top">
+  <header class="hero">
+    <div class="hero-block">
+      <p class="hero-kicker">Communications, Brand &amp; Partnerships Lead. Nonprofit and corporate brand work across Vietnam and Australia.</p>
+      <h1 class="display"><span class="small">Ha Nhu Huong</span><span class="big">Portfolio</span></h1>
+    </div>
+    <div class="hero-photo">
+      <figure class="ph"><span class="ph-label">Ảnh chân dung (dọc, càng lớn càng đẹp)<br><code>images/chan-dung.jpg</code></span><img data-slot="images/chan-dung" alt="Ha Nhu Huong"></figure>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="intro">
+      <div>
+        <p class="tag">I turn social impact into stories people share and partnerships organisations sign.</p>
+        <p class="who"><b>Ha Nhu Huong (Huong Ha)</b>, based in Ho Chi Minh City</p>
+        <div class="actions">
+          <a class="btn btn-main" href="#work">See case studies</a>
+          <a class="btn btn-line" href="#contact">Download CV <span class="fill">[link CV]</span></a>
+        </div>
+      </div>
+      <dl class="facts">
+        <div><dt>Now</dt><dd>Communications &amp; Partnerships Lead, ASIF Foundation</dd></div>
+        <div><dt>Before</dt><dd>Fundraising and digital media at SOS Children’s Villages Vietnam and MSD United Way Vietnam; five years in agencies and companies</dd></div>
+        <div><dt>Studied</dt><dd>Marketing, Brand Management, University of Finance and Marketing</dd></div>
+      </dl>
+    </div>
+
+    <section aria-labelledby="toc-h">
+      <div class="contents">
+        <div>
+          <h2 class="display sec-title" id="toc-h">Contents</h2>
+          <figure class="ph"><span class="ph-label">Ảnh ngang đẹp nhất của bạn (sự kiện, hậu trường)<br><code>images/muc-luc.jpg</code></span><img data-slot="images/muc-luc" alt="Huong at work"></figure>
+        </div>
+        <ol class="toc">
+          <li><a href="#about"><span class="n">01</span><span class="t">About me</span></a></li>
+          <li><a href="#results"><span class="n">02</span><span class="t">Results in numbers</span></a></li>
+          <li><a href="#experience"><span class="n">03</span><span class="t">Work experience</span></a></li>
+          <li><a href="#work"><span class="n">04</span><span class="t">Case studies</span></a></li>
+          <li><a href="#gallery"><span class="n">05</span><span class="t">More work</span></a></li>
+          <li><a href="#contact"><span class="n">06</span><span class="t">Contact</span></a></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-h">
+      <div class="about">
+        <h2 class="display sec-title" id="about-h">About me</h2>
+        <div>
+          <p>I have spent 8+ years in communications and marketing, first in digital agencies and companies, and since 2022 in nonprofits working on children, health, education, clean water and community capacity in Vietnam.</p>
+          <p>Today I lead communications and partnerships at ASIF Foundation, connecting Vietnamese partners with Australian donors and board members. My agency years taught me the language of brands, budgets and ESG. My nonprofit years taught me the language of people and impact. My work is making the two meet.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="band" id="results">
+    <div class="wrap">
+      <ul aria-label="Results in numbers">
+        <li><b>501M+</b><span>VND raised in one integrated campaign, 2023–2024</span></li>
+        <li><b>30+</b><span>press and magazine articles for one product launch, 2026</span></li>
+        <li><b>250K+</b><span>organic Facebook views, 2025–2026 <span class="fill">[xác nhận fanpage]</span></span></li>
+        <li><b>6,400</b><span>school lunches funded through crowdfunding</span></li>
+        <li><b>10+</b><span>corporate, hospital, university and community partners</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section id="experience" aria-labelledby="exp-h">
+      <div class="exp">
+        <h2 class="display sec-title" id="exp-h">Work<br>experience</h2>
+        <ol class="tl">
+          <li><h3>Communications &amp; Partnerships Lead</h3><p class="org">ASIF Foundation</p><p class="d">05/2024 – now. Joined as Communications &amp; Fundraising Coordinator.</p></li>
+          <li><h3>Fundraising &amp; Digital Media Specialist</h3><p class="org">SOS Children’s Villages Vietnam &amp; MSD United Way Vietnam</p><p class="d">04/2022 – 04/2024</p></li>
+          <li><h3>Digital Marketing Specialist</h3><p class="org">Viet A Group</p><p class="d">2021 – 02/2022</p></li>
+          <li><h3>Business Development Specialist</h3><p class="org">Viec.Co</p><p class="d">2020</p></li>
+          <li><h3>Project Assistant, Marketing</h3><p class="org">INSEE Vietnam</p><p class="d">2018 – 2019</p></li>
+          <li><h3>Digital Account Executive</h3><p class="org">ANTS Agency</p><p class="d">2017 – 2018</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="work" aria-labelledby="work-h">
+      <h2 class="display sec-title" id="work-h">Case studies</h2>
+
+      <article class="case" id="up">
+        <div class="case-top">
+          <div>
+            <p class="num">Case 01</p>
+            <h3 class="display">UP launch</h3>
+            <p class="sub">Launching a digital capacity platform for social organisations</p>
+            <p class="meta">ASIF Foundation with Thao Dan, ARITO Solutions and UEF University, August 2026</p>
+          </div>
+          <ul class="tags"><li>Communications</li><li>Event</li><li>PR</li></ul>
+        </div>
+        <div class="media">
+          <figure class="ph"><span class="ph-label">Key visual sự kiện UP<br><code>images/up-1-kv.jpg</code></span><img data-slot="images/up-1-kv" alt="UP launch key visual"></figure>
+          <figure class="ph"><span class="ph-label">Toàn cảnh sự kiện<br><code>images/up-2-su-kien.jpg</code></span><img data-slot="images/up-2-su-kien" alt="UP launch event"></figure>
+          <figure class="ph"><span class="ph-label">Ảnh ghép các bài báo<br><code>images/up-3-bao-chi.jpg</code></span><img class="contain" data-slot="images/up-3-bao-chi" alt="Press coverage of the UP launch"></figure>
+        </div>
+        <div class="case-body">
+          <div>
+            <h4>Context</h4>
+            <p>Four organisations partnered to launch UP, a software platform that helps social organisations build digital capacity.</p>
+            <h4>My role</h4>
+            <p>Communications lead for the launch.</p>
+            <h4>What I did</h4>
+            <ul>
+              <li>Wrote the event script and run-of-show, and coordinated all four partner organisations.</li>
+              <li>Led media relations, including press releases and media invitations.</li>
+              <li>Designed the key visual system and event collaterals.</li>
+              <li>Produced the platform introduction and demo videos.</li>
+            </ul>
+          </div>
+          <div class="results">
+            <h4>Results</h4>
+            <ul>
+              <li>70+ guests attended.</li>
+              <li>30+ press and magazine articles covered the launch.</li>
+              <li>3 organisations registered to use UP right after the event.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="case" id="wish">
+        <div class="case-top">
+          <div>
+            <p class="num">Case 02</p>
+            <h3 class="display">One wish</h3>
+            <p class="sub">“If I Had One Wish”, an integrated fundraising campaign</p>
+            <p class="meta">MSD United Way Vietnam, December 2023 to February 2024</p>
+          </div>
+          <ul class="tags"><li>Fundraising</li><li>Campaign</li><li>Event</li></ul>
+        </div>
+        <div class="media">
+          <figure class="ph"><span class="ph-label">Key visual chiến dịch<br><code>images/wish-1-kv.jpg</code></span><img data-slot="images/wish-1-kv" alt="Campaign key visual"></figure>
+          <figure class="ph"><span class="ph-label">Sự kiện 20/01/2024<br><code>images/wish-2-su-kien.jpg</code></span><img data-slot="images/wish-2-su-kien" alt="Event on 20 January 2024"></figure>
+          <figure class="ph"><span class="ph-label">Gian hàng gây quỹ<br><code>images/wish-3-gian-hang.jpg</code></span><img data-slot="images/wish-3-gian-hang" alt="Fundraising booth"></figure>
+        </div>
+        <div class="case-body">
+          <div>
+            <h4>Context</h4>
+            <p>The annual campaign “15 Years Together: A New Page of Life” raised funds for children without birth certificates and children in difficult circumstances in Ho Chi Minh City. It ran on Facebook, TikTok, with KOLs and in the press, and closed with the event “If I Had One Wish” on 20 January 2024.</p>
+            <h4>My role</h4>
+            <p>Communications lead and fundraising coordinator.</p>
+            <h4>What I did</h4>
+            <ul>
+              <li>Wrote the event script and designed the key visual and campaign collaterals.</li>
+              <li>Coordinated fundraising from individuals and companies: merchandise sales, a donation booth, crowdfunding and in-kind gifts.</li>
+            </ul>
+          </div>
+          <div class="results">
+            <h4>Results</h4>
+            <ul>
+              <li>501,753,070 VND raised: 258M VND in cash and 243.7M VND in kind.</li>
+              <li>124K+ reach, 3.3K+ engagements and 48K+ video views.</li>
+              <li>20+ press outlets and KOLs shared the campaign, with 7 campaign ambassadors.</li>
+              <li>40+ individual donors and 20+ partner organisations.</li>
+              <li>100 children received Tet gifts at the event and 3 received their birth certificates.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="case" id="momo">
+        <div class="case-top">
+          <div>
+            <p class="num">Case 03</p>
+            <h3 class="display">Crowdfunding</h3>
+            <p class="sub">MoMo campaigns for water, school meals and children’s education</p>
+            <p class="meta">SOS Children’s Villages Vietnam and MSD United Way Vietnam, 2022–2024</p>
+          </div>
+          <ul class="tags"><li>Digital fundraising</li></ul>
+        </div>
+        <div class="media">
+          <figure class="ph"><span class="ph-label">Trang chiến dịch MoMo có số tiền<br><code>images/momo-1-chien-dich.jpg</code></span><img class="contain" data-slot="images/momo-1-chien-dich" alt="MoMo campaign page"></figure>
+          <figure class="ph"><span class="ph-label">Trạm Đại sứ nước 2023<br><code>images/momo-2-dai-su-nuoc.jpg</code></span><img data-slot="images/momo-2-dai-su-nuoc" alt="Water Ambassador booth, 2023"></figure>
+          <figure class="ph"><span class="ph-label">Công trình nước / bữa ăn<br><code>images/momo-3-ket-qua.jpg</code></span><img data-slot="images/momo-3-ket-qua" alt="Water project and school meals funded"></figure>
+        </div>
+        <div class="case-body">
+          <div>
+            <h4>Context</h4>
+            <p>Four community programmes needed steady, small-gift funding from the public: Water Ambassador (water infrastructure in mountainous provinces), A New Page of Life, school lunches at Ai Linh Charity School, and a learning fund for autistic children at Niem Tin shelter.</p>
+            <h4>My role</h4>
+            <p>Planned and ran the crowdfunding campaigns on MoMo and Facebook.</p>
+            <h4>What I did</h4>
+            <p><span class="fill">[2–3 việc cụ thể bạn đã làm]</span> Each round ran for 60 to 90 days.</p>
+          </div>
+          <div class="results">
+            <h4>Results</h4>
+            <ul>
+              <li>Each round raised 150–200M VND. <span class="fill">[tổng số đợt, tổng số tiền]</span></li>
+              <li>5+ water projects in Hoa Binh, Ha Giang and Long An.</li>
+              <li>6,400 school lunches for 40 students over one year.</li>
+              <li>One year of learning support for 15 autistic children.</li>
+              <li>Birth certificates for 10+ children.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="case" id="csr">
+        <div class="case-top">
+          <div>
+            <p class="num">Case 04</p>
+            <h3 class="display">CSR partnership</h3>
+            <p class="sub">A partnership with a multinational healthcare company</p>
+            <p class="meta">ASIF Foundation, <span class="fill">[năm]</span></p>
+          </div>
+          <ul class="tags"><li>Partnerships</li><li>CSR and ESG</li></ul>
+        </div>
+        <div class="media">
+          <figure class="ph"><span class="ph-label">1 trang CSR Partnership Menu (che giá)<br><code>images/csr-1-menu.jpg</code></span><img class="contain" data-slot="images/csr-1-menu" alt="CSR Partnership Menu"></figure>
+          <figure class="ph"><span class="ph-label">Lễ ký MOU<br><code>images/csr-2-ky-mou.jpg</code></span><img data-slot="images/csr-2-ky-mou" alt="MOU signing"></figure>
+          <figure class="ph"><span class="ph-label">Hoạt động sau ký kết<br><code>images/csr-3-hoat-dong.jpg</code></span><img data-slot="images/csr-3-hoat-dong" alt="Partnership activity"></figure>
+        </div>
+        <div class="case-body">
+          <div>
+            <h4>Context</h4>
+            <p>ASIF needed a clear way to offer companies programmes that match their ESG and SDG priorities.</p>
+            <h4>My role</h4>
+            <p>Partnership development lead.</p>
+            <h4>What I did</h4>
+            <ul>
+              <li>Built a CSR Partnership Menu and tailored proposals for corporate prospects.</li>
+              <li>Coordinated the tripartite MOU between the company, ASIF and <span class="fill">[bên thứ ba]</span>.</li>
+            </ul>
+          </div>
+          <div class="results">
+            <h4>Results</h4>
+            <ul>
+              <li>Signed a CSR partnership with a multinational healthcare company.</li>
+              <li><span class="fill">[giá trị hợp đồng, thời hạn]</span></li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="case" id="brand">
+        <div class="case-top">
+          <div>
+            <p class="num">Case 05</p>
+            <h3 class="display">Brand ASIF</h3>
+            <p class="sub">One consistent brand across Vietnam and Australia</p>
+            <p class="meta">ASIF Foundation, 2024 to now</p>
+          </div>
+          <ul class="tags"><li>Branding</li><li>Social</li><li>Website</li></ul>
+        </div>
+        <div class="media">
+          <figure class="ph"><span class="ph-label">Trang brand guideline tiêu biểu<br><code>images/brand-1-guideline.jpg</code></span><img class="contain" data-slot="images/brand-1-guideline" alt="ASIF brand guidelines"></figure>
+          <figure class="ph"><span class="ph-label">Insight fanpage<br><code>images/brand-2-insight.jpg</code></span><img class="contain" data-slot="images/brand-2-insight" alt="Facebook page insights"></figure>
+          <figure class="ph"><span class="ph-label">Website asif.foundation<br><code>images/brand-3-website.jpg</code></span><img class="contain" data-slot="images/brand-3-website" alt="asif.foundation website"></figure>
+        </div>
+        <div class="case-body">
+          <div>
+            <h4>Context</h4>
+            <p>ASIF speaks to Vietnamese partners and Australian donors at the same time and needed one identity that works for both.</p>
+            <h4>What I did</h4>
+            <ul>
+              <li>Built the brand guidelines and the content calendar.</li>
+              <li>Led the website projects for ASIF Foundation and MSD United Way Vietnam, and developed ASIF’s Facebook and LinkedIn channels.</li>
+              <li>Designed the logos for VietNEST and UP.</li>
+              <li>Produced the organisation profile, donor brochure and annual reports for 2023–2024 and 2024–2025. <span class="fill">[vai trò: viết / thiết kế / điều phối]</span></li>
+            </ul>
+          </div>
+          <div class="results">
+            <h4>Results, organic Facebook 2025–2026</h4>
+            <ul>
+              <li>250K+ views and 15K+ engagements without paid ads.</li>
+              <li>66% of views came from people who did not yet follow the page.</li>
+              <li>Australia is the second-largest audience after Vietnam, matching ASIF’s cross-border donor base.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="gallery" aria-labelledby="gallery-h">
+      <h2 class="display sec-title" id="gallery-h">More work</h2>
+      <div class="gallery">
+        <div class="tile wide">
+          <figure class="ph"><span class="ph-label">Bìa báo cáo thường niên<br><code>images/g-bao-cao.jpg</code></span><img data-slot="images/g-bao-cao" alt="ASIF annual report covers"></figure>
+          <h3>Annual reports</h3><p>ASIF Foundation, 2023–2024 and 2024–2025. <span class="fill">[link PDF]</span></p>
+        </div>
+        <div class="tile wide">
+          <figure class="ph"><span class="ph-label">Ghép 6–9 bài social<br><code>images/g-social.jpg</code></span><img class="contain" data-slot="images/g-social" alt="Social media posts"></figure>
+          <h3>Social content</h3><p>Posts for ASIF Foundation and MSD United Way Vietnam.</p>
+        </div>
+        <div class="tile">
+          <figure class="ph"><span class="ph-label">Bìa profile + brochure<br><code>images/g-profile-brochure.jpg</code></span><img data-slot="images/g-profile-brochure" alt="ASIF profile and donor brochure"></figure>
+          <h3>Profile and donor brochure</h3><p>Organisation profile and a donor guide. <span class="fill">[link PDF]</span></p>
+        </div>
+        <div class="tile">
+          <figure class="ph"><span class="ph-label">Screenshot 2 website<br><code>images/g-websites.jpg</code></span><img class="contain" data-slot="images/g-websites" alt="Websites"></figure>
+          <h3>Websites</h3><p><a href="https://asif.foundation" target="_blank" rel="noopener">asif.foundation</a> and <a href="https://msdunitedwayvn.org" target="_blank" rel="noopener">msdunitedwayvn.org</a></p>
+        </div>
+        <div class="tile">
+          <figure class="ph"><span class="ph-label">Logo VietNEST + UP<br><code>images/g-logos.jpg</code></span><img class="contain" data-slot="images/g-logos" alt="VietNEST and UP logos"></figure>
+          <h3>Logos</h3><p>Identity design for VietNEST and the UP platform.</p>
+        </div>
+        <div class="tile">
+          <figure class="ph"><span class="ph-label">Ảnh bìa video<br><code>images/g-video.jpg</code></span><img data-slot="images/g-video" alt="Video thumbnail"></figure>
+          <h3>Video</h3><p><a href="https://www.youtube.com/watch?v=bfYnuyb3rYQ" target="_blank" rel="noopener">Video 1</a> and <a href="https://www.youtube.com/watch?v=chr-Wkk3LT8" target="_blank" rel="noopener">Video 2</a> on YouTube. <span class="fill">[tên video, vai trò]</span></p>
+        </div>
+        <div class="tile">
+          <figure class="ph"><span class="ph-label">Buổi tập huấn<br><code>images/g-tap-huan.jpg</code></span><img data-slot="images/g-tap-huan" alt="Training session"></figure>
+          <h3>Training</h3><p>An AI workshop for the ASIF team and a five-session Canva course for partner NGO staff.</p>
+        </div>
+        <div class="tile">
+          <figure class="ph"><span class="ph-label">Lễ khởi công<br><code>images/g-khoi-cong.jpg</code></span><img data-slot="images/g-khoi-cong" alt="School toilet groundbreaking"></figure>
+          <h3>School toilet groundbreaking</h3><p>Event and media relations; 10+ press articles. <span class="fill">[tổ chức, năm]</span></p>
+        </div>
+        <div class="tile">
+          <figure class="ph"><span class="ph-label">Tọa đàm / trạm tư vấn<br><code>images/g-su-kien-2023.jpg</code></span><img data-slot="images/g-su-kien-2023" alt="Community events 2023"></figure>
+          <h3>Community events, 2023</h3><p>“Goods for Good” talk with TikTok sellers, and a Water Ambassador booth at MM Mega Market.</p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="beyond-h">
+      <div class="closing">
+        <h2 class="display sec-title" id="beyond-h">Beyond work</h2>
+        <p>For 12 years I have been a youth leader in the Vietnamese Eucharistic Youth Movement, running summer camps, retreats, Mid-Autumn and Christmas programmes and Tet charity fairs. It is where I learned to plan programmes for large groups of children with a team of volunteers. Outside of that, I read philosophy and travel to learn about local cultures.</p>
+      </div>
+    </section>
+
+    <div class="contact" id="contact">
+      <h2 class="display">Contact</h2>
+      <dl>
+        <div><dt>Email</dt><dd><a href="mailto:nhuhuong.ha@gmail.com">nhuhuong.ha@gmail.com</a></dd></div>
+        <div><dt>LinkedIn</dt><dd><span class="fill">[link LinkedIn]</span></dd></div>
+        <div><dt>CV</dt><dd><span class="fill">[link tải CV]</span></dd></div>
+        <div><dt>Location</dt><dd>Ho Chi Minh City, open to remote work</dd></div>
+      </dl>
+    </div>
+  </div>
+</main>
+
+<footer><div class="wrap"><p>Ha Nhu Huong, 2026. Numbers come from campaign reports and platform insights.</p></div></footer>
+
+<script>
+(function(){
+  var exts=['.jpg','.jpeg','.png','.webp','.JPG','.PNG'];
+  document.querySelectorAll('img[data-slot]').forEach(function(img){
+    var fig=img.closest('figure'), i=0, base=img.getAttribute('data-slot');
+    function next(){ if(i>=exts.length){ img.remove(); return; } img.src=base+exts[i++]; }
+    img.onload=function(){ fig.classList.add('has-img'); img.onclick=function(){ window.open(img.src,'_blank'); }; };
+    img.onerror=next; next();
+  });
+})();
+</script>
+</body>
+</html>
